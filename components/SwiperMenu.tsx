@@ -74,7 +74,9 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
               />
             </div>
             <div className={styles.reservation}>
-              <p className={styles.tel}>TEL. 01 42 88 11 49</p>
+              <a href="tel:0142881149" className={styles.tel}>
+                TEL. 01 42 88 11 49
+              </a>
             </div>
           </div>
         </div>
@@ -101,7 +103,9 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
               />
             </div>
             <div className={styles.reservation}>
-              <p className={styles.tel}>TEL. 01 45 27 09 02</p>
+              <a href="tel:0145270902" className={styles.tel}>
+                TEL. 01 45 27 09 02
+              </a>
             </div>
           </div>
         </div>
