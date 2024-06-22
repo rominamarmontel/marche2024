@@ -1,0 +1,120 @@
+.Menu {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.Menu_container {
+  width: 70% !important;
+  margin-bottom: 10rem;
+}
+.container {
+  width: 100%;
+}
+.Menu_title {
+  text-align: center;
+  margin-top: 5rem;
+}
+/** Access **/
+.Access {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Access_title {
+  text-align: center;
+  line-height: 2.25rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.Access_container {
+  width: 100%;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.AccessFrench {
+  display: flex;
+  gap: 5rem;
+}
+.AccessFrench li p {
+  font-family: 'myfont-Light';
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: black;
+}
+.AccessFrench li:first-child {
+  padding-bottom: 2rem;
+}
+
+/* PC & iPad pro */
+@media screen and (max-width: 1024px) {
+}
+/* ipad Air */
+@media screen and (max-width: 1023px) {
+  .Menu_container {
+    width: 90% !important;
+    margin-bottom: 10rem;
+  }
+  .Menu_title {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .Access_container {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+  .AccessFrench {
+    gap: 2rem;
+  }
+}
+/* ipad Mini & Smartphone */
+@media screen and (max-width: 768px) {
+  .Menu_container {
+    width: 90% !important;
+    margin-bottom: 10rem;
+  }
+  .Menu_title {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .Access_container {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+  .AccessFrench {
+    gap: 2rem;
+  }
+}
+/* Smartphone */
+@media (max-width: 640px) {
+  .Menu_container {
+    width: 90% !important;
+    margin-bottom: 10rem;
+  }
+  .Menu_title {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .Access_container {
+    width: 90%;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .AccessFrench {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5rem;
+  }
+}

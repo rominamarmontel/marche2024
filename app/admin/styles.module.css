@@ -1,0 +1,13 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 20%;
+  z-index: 9999;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}

@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left_container {
+  width: 33%;
+  position: relative;
+}
+.imgContainer {
+  position: relative;
+  width: 100% !important;
+  height: 100vh !important;
+}
+.chef_image {
+  filter: grayscale(1);
+  object-fit: cover;
+}
+.language_container {
+  display: flex;
+  margin: 1.25rem 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-weight: 300;
+}
+.language {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.right_container {
+  width: 67% !important;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 0;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* PC & iPad pro */
+@media screen and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .left_container {
+    width: 100%;
+    height: 100vh;
+  }
+  .imgContainer {
+    height: 100vh !important;
+  }
+  .language {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .right_container {
+    width: 100% !important;
+    padding-bottom: 5rem;
+  }
+}
+/* ipad Air */
+@media screen and (max-width: 1023px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .left_container {
+    width: 100%;
+    height: 100vh;
+  }
+  .imgContainer {
+    height: 100vh !important;
+  }
+  .language {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .right_container {
+    width: 100% !important;
+    padding-bottom: 5rem;
+  }
+}
+/* ipad Mini & Smartphone */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .left_container {
+    width: 100%;
+    height: 100%;
+  }
+  .imgContainer {
+    height: 100vh !important;
+  }
+  .language {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .right_container {
+    width: 100% !important;
+    padding-bottom: 5rem;
+  }
+}
+/* Smartphone */
+@media (max-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .left_container {
+    width: 100%;
+    height: 100%;
+  }
+  .imgContainer {
+    height: 100vh !important;
+  }
+  .language {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .right_container {
+    width: 100% !important;
+    padding-bottom: 5rem;
+  }
+}

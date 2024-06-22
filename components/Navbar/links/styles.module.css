@@ -1,0 +1,232 @@
+.container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  z-index: 10;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); */
+  background: linear-gradient(to bottom, #57722a, rgba(87, 114, 42, 0));
+  color: white;
+}
+.NavbarGourmet,
+.NavbarMarche {
+  padding: 0 1.25rem;
+}
+.Navbar_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Navbar_logoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.3rem;
+}
+.Navbar_list,
+.Navbar_list_right {
+  display: flex;
+  gap: 1.5rem;
+  font-family: 'myfont-MontserraLight';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+.Navbar_list a:hover,
+.Navbar_list_right a:hover {
+  color: #b29b61;
+}
+
+.title {
+  font-family: 'Raleway', sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 22px;
+}
+.langFlex {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.activeLang {
+  color: red;
+  transition: color 0.8s ease-in-out;
+}
+.langTitle {
+  font-size: 0.85rem;
+}
+.NavbarMarche .Navbar_image {
+  width: 8.5rem;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menuButton,
+.mobileLinks {
+  display: none;
+}
+.listContainer {
+  display: flex;
+}
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.sushiMarcheLink,
+.sushiGourmetLink {
+  background-color: #b29b61;
+  color: black;
+  padding: 2px 5px;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  font-family: 'Railway', sans-serif;
+  font-weight: bold;
+}
+.sushiMarcheLink:hover,
+.sushiGourmetLink:hover {
+  color: white;
+  background-color: #827147;
+}
+.sushiMarcheLink a:hover,
+.sushiGourmetLink a:hover {
+  color: white;
+}
+
+/*× ボタン*/
+.openbtn1 {
+  position: fixed;
+  z-index: 9999;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+}
+/*×に変化*/
+.openbtn1 span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  background-color: gray;
+  width: 45%;
+  border-radius: 2px;
+}
+.openbtn1 span:nth-of-type(1) {
+  top: 22px;
+  width: 50%;
+}
+.openbtn1 span:nth-of-type(2) {
+  top: 29px;
+  width: 30%;
+}
+.openbtn1.active span:nth-of-type(1) {
+  top: 20px;
+  left: 16px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 35%;
+}
+.openbtn1.active span:nth-of-type(2) {
+  top: 32px;
+  left: 16px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 35%;
+}
+
+/* PC & iPad pro */
+@media screen and (max-width: 1024px) {
+  .Navbar_list,
+  .Navbar_list_right,
+  .links {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+    z-index: 2;
+  }
+  .mobileLinks {
+    font-family: 'myfont-Light';
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.818);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    z-index: 1;
+  }
+}
+/* ipad Air */
+@media screen and (max-width: 1023px) {
+  .Navbar_list,
+  .Navbar_list_right,
+  .links {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+    z-index: 2;
+  }
+  .mobileLinks {
+    font-family: 'myfont-Light';
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.818);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    z-index: 1;
+  }
+}
+/* ipad Mini & Smartphone */
+@media screen and (max-width: 768px) {
+  .Navbar_list,
+  .Navbar_list_right,
+  .links {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+    z-index: 2;
+  }
+  .mobileLinks {
+    font-family: 'myfont-Light';
+    font-size: 1.5rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.818);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    z-index: 1;
+  }
+}
+/* Smartphone */
+@media (max-width: 640px) {
+}

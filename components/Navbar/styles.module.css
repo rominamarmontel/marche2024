@@ -1,0 +1,59 @@
+.container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 150px;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.09),
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.01),
+    rgba(0, 0, 0, 0)
+  );
+  /* background: linear-gradient(to bottom, #57722a, rgba(87, 114, 42, 0)); */
+  color: white;
+}
+.NavbarGourmet,
+.NavbarMarche {
+  padding: 0 1.25rem;
+}
+.Navbar_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Navbar_logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+.Navbar_list {
+  display: flex;
+  gap: 1.25rem;
+}
+.title {
+  font-family: 'Raleway', sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 22px;
+}
+.NavbarMarche .Navbar_image {
+  width: 8.5rem;
+}
