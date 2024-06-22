@@ -88,7 +88,7 @@ export const POST = async (req: Request) => {
 
 export const GET = async(req:Request) => {
   await connectMongoDB()
-  const gourmets = await Gourmet.find().sort({ updatedAt: -1 })
+  const gourmets = await Gourmet.find()
   const gourmetsWithCategories = await Promise.all(
     gourmets.map(async (gourmet) => {
       if (gourmet.category) {
