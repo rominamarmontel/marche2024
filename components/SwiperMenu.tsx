@@ -28,7 +28,7 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
   const pathname = usePathname()
 
   return (
-    <div className="w-full h-full relative">
+    <div className={styles.Swiper}>
       <Swiper
         zoom={true}
         navigation={false}
@@ -56,22 +56,26 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
         pathname === '/en/sushimarche' ||
         pathname === '/jp/sushimarche') && (
         <div className={styles.overlayText}>
-          <p className={styles.welcome}>
-            WELCOME | BIENVENUE | <span>ようこそ</span>
-          </p>
-          {/* <h1>SUSHI MARCHE</h1> */}
-          <div style={{ position: 'relative' }} className={styles.imgContainer}>
-            <Image
-              src="/images/sushiMarche_ok.png"
-              alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
-              className={styles.img}
-              priority
-            />
-          </div>
-          <div className={styles.reservation}>
-            <p className={styles.tel}>TEL. 01 42 88 11 49</p>
+          <div className={styles.overlayContainer}>
+            <p className={styles.welcome}>
+              WELCOME | BIENVENUE | <span>ようこそ</span>
+            </p>
+            <div
+              style={{ position: 'relative' }}
+              className={styles.imgContainer}
+            >
+              <Image
+                src="/images/sushiMarche_ok.png"
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
+                className={styles.img}
+                priority
+              />
+            </div>
+            <div className={styles.reservation}>
+              <p className={styles.tel}>TEL. 01 42 88 11 49</p>
+            </div>
           </div>
         </div>
       )}
@@ -79,24 +83,26 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
         pathname === '/jp/sushigourmet' ||
         pathname === '/en/sushigourmet') && (
         <div className={styles.overlayText}>
-          <p className={styles.welcome}>
-            WELCOME | BIENVENUE | <span>ようこそ</span>
-          </p>
-          <div
-            style={{ position: 'relative' }}
-            className={styles.imgContainer_gourmet}
-          >
-            <Image
-              src="/images/sushiGourmet_ok.png"
-              alt=""
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
-              className={styles.img}
-              priority
-            />
-          </div>
-          <div className={styles.reservation}>
-            <p className={styles.tel}>TEL. 01 45 27 09 02</p>
+          <div className={styles.overlayContainer}>
+            <p className={styles.welcome}>
+              WELCOME | BIENVENUE | <span>ようこそ</span>
+            </p>
+            <div
+              style={{ position: 'relative' }}
+              className={styles.imgContainer_gourmet}
+            >
+              <Image
+                src="/images/sushiGourmet_ok.png"
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
+                className={styles.img}
+                priority
+              />
+            </div>
+            <div className={styles.reservation}>
+              <p className={styles.tel}>TEL. 01 45 27 09 02</p>
+            </div>
           </div>
         </div>
       )}

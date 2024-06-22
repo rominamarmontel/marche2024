@@ -50,10 +50,10 @@
 }
 
 /* PC & iPad pro */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
 }
 /* ipad Air */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1024px) {
   .Menu_container {
     width: 90% !important;
     margin-bottom: 10rem;
@@ -95,7 +95,7 @@
   }
 }
 /* Smartphone */
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .Menu_container {
     width: 90% !important;
     margin-bottom: 10rem;

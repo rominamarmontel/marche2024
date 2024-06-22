@@ -9,7 +9,7 @@ const FrenchContent = () => {
       <div className={styles.right_restaurant}>
         <div className={styles.logo}>
           <Link href="./sushimarche">
-            <div className="text-center mb-3">
+            <div className="text-center mb-3 w-full">
               <div
                 style={{ position: 'relative' }}
                 className={styles.imgContainer_marche}
@@ -38,7 +38,7 @@ const FrenchContent = () => {
         </div>
         <div className={styles.logo}>
           <Link href="./sushigourmet">
-            <div className="text-center mb-3">
+            <div className="text-center mb-3 w-full">
               <div
                 style={{ position: 'relative' }}
                 className={styles.imgContainer_gourmet}
@@ -47,7 +47,7 @@ const FrenchContent = () => {
                   src="/images/sushiGourmet_yoko.png"
                   alt=""
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
+                  // sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 1200px"
                   className={styles.img}
                   priority
                 />
