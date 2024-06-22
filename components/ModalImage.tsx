@@ -14,7 +14,7 @@ const ModalImage: React.FC<SetImageProps> = ({ show, setShow, url, alt }) => {
 
   if (show) {
     return (
-      <div className={styles.overlay} onClick={handleCloseModal}>
+      <div className={styles.modalOverlay} onClick={handleCloseModal}>
         <div className={styles.modal_content}>
           <div className={styles.modal_container}>
             <div
