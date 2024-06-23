@@ -40,14 +40,14 @@ const MenuJpWine: React.FC<StartersProps> = ({ marches }) => {
     <div className={styles.Wine} id="Wine">
       <div className={styles.container}>
         <div key={category}>
-          <h2 className={styles.category}>ワインリスト</h2>
+          <h2 className={styles.category_jp}>ワインリスト</h2>
           {Object.entries(groupedMarches)
             .sort((a, b) => {
               return genreOrder.indexOf(a[0]) - genreOrder.indexOf(b[0])
             })
             .map(([genre, marches]) => (
               <div key={genre}>
-                <h3 className={styles.genre}>
+                <h3 className={styles.genre_jp}>
                   {genreMapping[genre] || genre.toUpperCase()}
                 </h3>
                 <div className={styles.flexContainer}>

@@ -52,7 +52,7 @@ const MenuJpDrinkDessert: React.FC<DrinkDessertProps> = ({ gourmets }) => {
     <div className={styles.DrinkDessert} id="DrinkDesserts">
       <div className={styles.container}>
         <div key={category}>
-          <h2 className={styles.category}>飲み物 & デザート</h2>
+          <h2 className={styles.category_jp}>飲み物 & デザート</h2>
           {Object.entries(groupedGourmets)
             .sort((a, b) => {
               return genreOrder.indexOf(a[0]) - genreOrder.indexOf(b[0])
