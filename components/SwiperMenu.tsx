@@ -108,7 +108,7 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
             </div>
             <div
               style={{ position: 'relative' }}
-              className={styles.imgContainer_gourmet}
+              className={styles.imgContainer}
             >
               <Image
                 src="/images/sushiGourmet_ok.png"

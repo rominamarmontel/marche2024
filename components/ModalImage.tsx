@@ -19,7 +19,7 @@ const ModalImage: React.FC<SetImageProps> = ({ show, setShow, url, alt }) => {
           <div className={styles.modal_container}>
             <div
               style={{ position: 'relative' }}
-              className={`${styles.imgContainer} w-full aspect-video overflow-hidden`}
+              className={`w-full aspect-video overflow-hidden`}
             >
               <Image
                 src={url}
