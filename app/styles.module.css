@@ -128,6 +128,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
   .left_container {
     display: none;
@@ -143,6 +144,6 @@
   }
   .right_container {
     width: 100% !important;
-    padding-bottom: 5rem;
+    padding: 0;
   }
 }
