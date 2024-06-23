@@ -39,7 +39,6 @@
 .Navbar_list_right a:hover {
   color: #b29b61;
 }
-
 .title {
   font-family: 'Raleway', sans-serif !important;
   font-style: normal;
@@ -67,7 +66,6 @@
   align-items: center;
   gap: 10px;
 }
-.menuButton,
 .mobileLinks {
   display: none;
 }
@@ -115,7 +113,7 @@
   position: absolute;
   left: 14px;
   height: 2px;
-  background-color: gray;
+  background-color: rgb(173, 173, 173);
   width: 45%;
   border-radius: 2px;
 }
@@ -139,8 +137,43 @@
   transform: translateY(-6px) rotate(45deg);
   width: 35%;
 }
-
+.mobileLinks {
+  font-family: 'myfont-Light';
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 10px;
+  color: black;
+  z-index: 1;
+  padding-right: 2rem;
+}
+.mobileLinksLang {
+  display: flex !important;
+  gap: 0.5rem;
+}
 /* PC & iPad pro */
+@media (min-width: 1025px) {
+  .Navbar_list,
+  .Navbar_list_right,
+  .links {
+    display: flex;
+  }
+  .openbtn1 {
+    display: none;
+  }
+  .mobileLinks {
+    display: none;
+  }
+}
+/* ipad Air */
 @media screen and (max-width: 1024px) {
   .Navbar_list,
   .Navbar_list_right,
@@ -151,51 +184,10 @@
     display: flex;
     z-index: 2;
   }
-  .mobileLinks {
-    font-family: 'myfont-Light';
-    font-size: 1.5rem;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.818);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  .Navbar_logoContainer .imgContainer,
+  .title.active {
+    z-index: 9999;
     color: black;
-    z-index: 1;
-  }
-}
-/* ipad Air */
-@media screen and (max-width: 1023px) {
-  .Navbar_list,
-  .Navbar_list_right,
-  .links {
-    display: none;
-  }
-  .menuButton {
-    display: flex;
-    z-index: 2;
-  }
-  .mobileLinks {
-    font-family: 'myfont-Light';
-    font-size: 1.5rem;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.818);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: black;
-    z-index: 1;
   }
 }
 /* ipad Mini & Smartphone */
@@ -205,26 +197,10 @@
   .links {
     display: none;
   }
+
   .menuButton {
     display: flex;
     z-index: 2;
-  }
-  .mobileLinks {
-    font-family: 'myfont-Light';
-    font-size: 1.5rem;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.818);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: black;
-    z-index: 1;
   }
 }
 /* Smartphone */

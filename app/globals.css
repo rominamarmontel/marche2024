@@ -142,29 +142,28 @@ textarea {
   border-radius: 50%;
 }
 /* PC & iPad Pro (1024px 以上) */
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   body {
     background-color: lightblue;
   }
-}
-
+} */
 /* iPad Air (1024px 以下) */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   body {
     background-color: lightgreen;
   }
-}
+} */
 
 /* iPad Mini & スマートフォン (768px 以下) */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   body {
     background-color: lightcoral;
   }
-}
+} */
 
 /* スマートフォン (640px 以下) */
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   body {
     background-color: lightgoldenrodyellow;
   }
-}
+} */

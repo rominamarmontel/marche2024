@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -91,6 +93,11 @@ const NavbarMarche = () => {
     setIsActive(!isActive)
   }
 
+  const closeMenu = () => {
+    setOpen(false)
+    setIsActive(false)
+  }
+
   return (
     <div className={styles.NavbarMarche}>
       <div className={styles.Navbar_container}>
@@ -107,7 +114,9 @@ const NavbarMarche = () => {
                 priority={true}
               />
             </div>
-            <div className={styles.title}>Sushi Marché</div>
+            <div className={`${styles.title} ${isActive ? styles.active : ''}`}>
+              Sushi Marché
+            </div>
           </div>
         </Link>
 
@@ -119,6 +128,7 @@ const NavbarMarche = () => {
                 onClick={(e) => {
                   e.preventDefault()
                   handleScroll(link.path.substring(1))
+                  closeMenu()
                 }}
               >
                 {link.title}
@@ -150,21 +160,14 @@ const NavbarMarche = () => {
             </Link>
           </li>
         </ul>
-        <Image
-          src="/images/menu.png"
-          alt=""
-          width={30}
-          height={30}
-          onClick={() => setOpen((prev) => !prev)}
-          className={styles.menuButton}
-        />
-        {/* <div
-          className={`openbtn1 ${isActive ? 'active' : ''}`}
+
+        <div
+          className={`${styles.openbtn1} ${isActive ? styles.active : ''}`}
           onClick={toggleFunction}
         >
           <span></span>
           <span></span>
-        </div> */}
+        </div>
 
         {open && (
           <div className={styles.mobileLinks}>
@@ -172,12 +175,27 @@ const NavbarMarche = () => {
               <NavLink
                 item={link}
                 key={link.title}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  handleScroll(link.path.substring(1))
+                  closeMenu()
+                }}
               />
             ))}
-            {langs.map((lang: LangItem) => (
-              <NavLinkLang item={lang} key={lang.title} />
-            ))}
+            <div className={styles.mobileLinksLang}>
+              {langs.map((lang: LangItem, index: number) => (
+                <span key={lang.title}>
+                  <NavLinkLang item={lang} />
+                  {index < langs.length - 1 && ' | '}
+                </span>
+              ))}
+            </div>
+            <div>
+              <Link
+                href={`/${language === 'fr' ? '' : language + '/'}sushigourmet`}
+              >
+                Sushi Gourmet
+              </Link>
+            </div>
           </div>
         )}
       </div>

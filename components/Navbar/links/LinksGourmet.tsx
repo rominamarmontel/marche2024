@@ -85,7 +85,12 @@ const NavbarGourmet = () => {
 
   const toggleFunction = () => {
     setOpen((prevState) => !prevState)
-    setIsActive(!isActive)
+    setIsActive((prevState) => !prevState)
+  }
+
+  const closeMenu = () => {
+    setOpen(false)
+    setIsActive(false)
   }
 
   return (
@@ -104,7 +109,9 @@ const NavbarGourmet = () => {
                 priority={true}
               />
             </div>
-            <div className={styles.title}>Sushi Gourmet</div>
+            <div className={`${styles.title} ${isActive ? styles.active : ''}`}>
+              Sushi Gourmet
+            </div>
           </div>
         </Link>
 
@@ -116,6 +123,7 @@ const NavbarGourmet = () => {
                 onClick={(e) => {
                   e.preventDefault()
                   handleScroll(link.path.substring(1))
+                  closeMenu()
                 }}
               >
                 {link.title}
@@ -147,21 +155,14 @@ const NavbarGourmet = () => {
             </Link>
           </li>
         </ul>
-        <Image
-          src="/images/menu.png"
-          alt=""
-          width={30}
-          height={30}
-          onClick={() => setOpen((prev) => !prev)}
-          className={styles.menuButton}
-        />
-        {/* <div
-          className={`openbtn1 ${isActive ? 'active' : ''}`}
+
+        <div
+          className={`${styles.openbtn1} ${isActive ? styles.active : ''}`}
           onClick={toggleFunction}
         >
           <span></span>
           <span></span>
-        </div> */}
+        </div>
 
         {open && (
           <div className={styles.mobileLinks}>
@@ -169,12 +170,27 @@ const NavbarGourmet = () => {
               <NavLink
                 item={link}
                 key={link.title}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  handleScroll(link.path.substring(1))
+                  closeMenu()
+                }}
               />
             ))}
-            {langs.map((lang: LangItem) => (
-              <NavLinkLang item={lang} key={lang.title} />
-            ))}
+            <div className={styles.mobileLinksLang}>
+              {langs.map((lang: LangItem, index: number) => (
+                <span key={lang.title}>
+                  <NavLinkLang item={lang} />
+                  {index < langs.length - 1 && ' | '}
+                </span>
+              ))}
+            </div>
+            <div>
+              <Link
+                href={`/${language === 'fr' ? '' : language + '/'}sushimarche`}
+              >
+                Sushi Marché
+              </Link>
+            </div>
           </div>
         )}
       </div>
