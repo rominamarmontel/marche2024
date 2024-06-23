@@ -133,6 +133,20 @@ a.tel:hover {
     opacity: 1;
   }
 }
+
+/** Scroll to top **/
+.scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 3;
+}
+
+.scrollToTopIcon {
+  background-color: transparent;
+  color: gray;
+  font-size: 46px;
+}
 @media screen and (min-width: 1024px) {
 }
 
