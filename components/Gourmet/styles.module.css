@@ -20,6 +20,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #57722a;
+  color: white;
 }
 .Access_title {
   text-align: center;
@@ -43,7 +45,7 @@
   font-family: 'myfont-Light';
   font-size: 0.85rem;
   line-height: 1.65;
-  color: black;
+  color: white;
 }
 .AccessFrench li:first-child {
   padding-bottom: 2rem;

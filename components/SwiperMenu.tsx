@@ -16,6 +16,7 @@ import 'swiper/css/effect-fade'
 import Image from 'next/image'
 import styles from './styles.module.css'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 interface Slide {
   id: number
@@ -55,11 +56,19 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
       {(pathname === '/sushimarche' ||
         pathname === '/en/sushimarche' ||
         pathname === '/jp/sushimarche') && (
-        <div className={styles.overlayText}>
-          <div className={styles.overlayContainer}>
-            <p className={styles.welcome}>
-              WELCOME | BIENVENUE | <span>ようこそ</span>
-            </p>
+        <div className={styles.overlayContainer}>
+          <div className={styles.overlayText}>
+            <div className={styles.welcomeContainer}>
+              {pathname === '/sushimarche' ? (
+                <p className={styles.welcome}>BIENVENUE</p>
+              ) : pathname === '/en/sushimarche' ? (
+                <p className={styles.welcome}>WELCOME</p>
+              ) : (
+                <p className={styles.welcome}>
+                  <span>ようこそ</span>
+                </p>
+              )}
+            </div>
             <div
               style={{ position: 'relative' }}
               className={styles.imgContainer}
@@ -84,11 +93,19 @@ const SwiperMenu: React.FC<DemoSliderProps> = ({ data }) => {
       {(pathname === '/sushigourmet' ||
         pathname === '/jp/sushigourmet' ||
         pathname === '/en/sushigourmet') && (
-        <div className={styles.overlayText}>
-          <div className={styles.overlayContainer}>
-            <p className={styles.welcome}>
-              WELCOME | BIENVENUE | <span>ようこそ</span>
-            </p>
+        <div className={styles.overlayContainer}>
+          <div className={styles.overlayText}>
+            <div className={styles.welcomeContainer}>
+              {pathname === '/sushigourmet' ? (
+                <p className={styles.welcome}>BIENVENU</p>
+              ) : pathname === '/en/sushigourmet' ? (
+                <p className={styles.welcome}>WELCOME</p>
+              ) : (
+                <p className={styles.welcome}>
+                  <span>ようこそ</span>
+                </p>
+              )}
+            </div>
             <div
               style={{ position: 'relative' }}
               className={styles.imgContainer_gourmet}

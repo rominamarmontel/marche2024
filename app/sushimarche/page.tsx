@@ -3,6 +3,7 @@ import SwiperMenu from '@/components/SwiperMenu'
 import dataSlider from '@/data/slider-data.json'
 import Access from '@/components/Gourmet/Access'
 import styles from './styles.module.css'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const page = () => {
   return (
@@ -10,6 +11,7 @@ const page = () => {
       <SwiperMenu data={dataSlider} />
       <Menu />
       <Access />
+      <ScrollToTop />
     </div>
   )
 }
