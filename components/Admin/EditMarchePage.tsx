@@ -2,7 +2,7 @@
 
 import styles from './styles.module.css'
 import { useState, useEffect } from 'react'
-import { TCategory, TGourmet } from '@/types'
+import { TCategory, TGourmet, TMarche } from '@/types'
 import { useRouter } from 'next/navigation'
 import { CldUploadButton, CloudinaryUploadWidgetResults } from 'next-cloudinary'
 import Image from 'next/image'
@@ -22,7 +22,7 @@ const categoryGenresMap: Record<string, string[]> = {
   'Wine List': ['red-wine', 'white-wine', 'rose-wine', 'champagne'],
 }
 
-const EditMarchePage = ({ gourmet }: { gourmet: TGourmet }) => {
+const EditMarchePage = ({ marche }: { marche: TMarche }) => {
   const [categories, setCategories] = useState<TCategory[]>([])
   const [category, setCategory] = useState('-1')
   const [selectedCategory, setSelectedCategory] = useState<string>('')
@@ -67,23 +67,23 @@ const EditMarchePage = ({ gourmet }: { gourmet: TGourmet }) => {
     fetchAllCategories()
 
     const initValues = () => {
-      const categoryCatName = gourmet.category ? gourmet.category.catName : '-1'
+      const categoryCatName = marche.category ? marche.category.catName : '-1'
       setCategory(categoryCatName)
       setSelectedCategory(categoryCatName)
-      setGenre(gourmet.genre || '')
-      setTitles(gourmet.title || { en: '', fr: '', jp: '' })
+      setGenre(marche.genre || '')
+      setTitles(marche.title || { en: '', fr: '', jp: '' })
       setDetails(
-        typeof gourmet.detail === 'string'
+        typeof marche.detail === 'string'
           ? { en: '', fr: '', jp: '' }
-          : gourmet.detail || { en: '', fr: '', jp: '' }
+          : marche.detail || { en: '', fr: '', jp: '' }
       )
-      setPrice(gourmet.price || '')
-      setPriceLunch(gourmet.priceLunch || '')
-      setVolume(gourmet.volume || '')
-      setImageData(gourmet.imageData || [])
+      setPrice(marche.price || '')
+      setPriceLunch(marche.priceLunch || '')
+      setVolume(marche.volume || '')
+      setImageData(marche.imageData || [])
     }
     initValues()
-  }, [gourmet])
+  }, [marche])
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCategory = e.target.value
@@ -191,7 +191,7 @@ const EditMarchePage = ({ gourmet }: { gourmet: TGourmet }) => {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/marches/${gourmet._id}`,
+        `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/marches/${marche._id}`,
         {
           method: 'PUT',
           headers: {
@@ -418,7 +418,7 @@ const EditMarchePage = ({ gourmet }: { gourmet: TGourmet }) => {
               >
                 <Image
                   src={image.url}
-                  alt={gourmet.title.en}
+                  alt={marche.title.en}
                   width={150}
                   height={150}
                 />
