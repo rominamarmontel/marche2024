@@ -58,11 +58,13 @@ const LoginForm = () => {
             />
           </div>
           <div className={styles.btnContainer}>
-            <button className="primary-btn">Login</button>
+            <button className={`${styles.loginButton} primary-btn`}>
+              Login
+            </button>
           </div>
           <Link href={'/register'} className={styles.text}>
             Do you have an account? {''}
-            <span className={styles.text}>Register</span>
+            <span className={`${styles.text} underline`}>Register</span>
           </Link>
         </form>
       </div>
