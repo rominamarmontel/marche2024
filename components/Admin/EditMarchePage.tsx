@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './styles.module.css'
+import styles from './create.module.css'
 import { useState, useEffect } from 'react'
 import { TCategory, TGourmet, TMarche } from '@/types'
 import { useRouter } from 'next/navigation'
