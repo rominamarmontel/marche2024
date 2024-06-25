@@ -1,0 +1,48 @@
+.CreateGourmetPage,
+.CreateMarchePage,
+.EditGourmetPage,
+.EditMarchePage {
+  font-family: 'myfont-HelveticaNeuveLight';
+  letter-spacing: 0px;
+  font-size: 1.2rem;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #dee2e6;
+}
+.formContainer {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.title {
+  font-family: 'myfont-HelveticaNeuveMedium';
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+.CreateGourmetPage label,
+.CreateMarchePage label,
+.EditGourmetPage label,
+.EditMarchePage label {
+  font-family: 'myfont-HelveticaNeuveMedium';
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  padding-bottom: 0;
+  line-height: 1.2rem;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.form_select {
+  border: 2.5px solid rgb(7, 7, 7);
+  padding: 0.7rem 1rem;
+  font-family: 'myfont-HelveticaNeuveLight';
+  color: rgb(163, 163, 163);
+}
+.button {
+  width: 20%;
+  margin: 2rem auto;
+}

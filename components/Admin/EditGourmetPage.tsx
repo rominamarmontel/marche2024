@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './styles.module.css'
+import styles from './create.module.css'
 import { useState, useEffect } from 'react'
 import { TCategory, TGourmet } from '@/types'
 import { useRouter } from 'next/navigation'
@@ -219,13 +219,26 @@ const EditGourmetPage = ({ gourmet }: { gourmet: TGourmet }) => {
   }
 
   return (
-    <div className={styles.CreateGourmetPage}>
+    <div className={styles.EditGourmetPage}>
       <div className={styles.container}>
-        <div className={styles.title}>Edit Gourmet Page</div>
+        <div className="bg-stone-300 flex flex-col items-center pb-4">
+          <div className={`${styles.title}`}>SUSHI GOURMET EDIT</div>
+          <Image
+            src="/images/sushigourmet.png"
+            alt="sushigourmet"
+            width={100}
+            height={50}
+          />
+        </div>
+        <div className="text-right text-sm pt-2 px-2">
+          <span className="text-pink-600 font-bold">*</span>必須項目
+        </div>
+
         <form onSubmit={handleSubmit} className={styles.formContainer}>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="category">
-              カテゴリー / Category
+              CATEGORY
+              <span className="text-pink-600 font-bold">*</span>
             </label>
             <select
               onChange={handleCategoryChange}
@@ -249,7 +262,7 @@ const EditGourmetPage = ({ gourmet }: { gourmet: TGourmet }) => {
           </div>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="genre">
-              ジャンル / Genre
+              GENRE<span className="text-pink-600 font-bold">*</span>
             </label>
             <select
               onChange={(e) => setGenre(e.target.value)}
@@ -258,7 +271,7 @@ const EditGourmetPage = ({ gourmet }: { gourmet: TGourmet }) => {
               }
               value={genre}
             >
-              <option value="">
+              <option value="-1">
                 Choose a genre | ジャンルを選択してください
               </option>
               {selectedCategory &&
@@ -270,116 +283,141 @@ const EditGourmetPage = ({ gourmet }: { gourmet: TGourmet }) => {
                 ))}
             </select>
           </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="titleEn">
-              メニュー名 (英語) / Title (English)
-            </label>
-            <input
-              type="text"
-              id="titleEn"
-              className={titleEnError ? styles.error_border : styles.form_input}
-              placeholder="e.g. Sushi"
-              value={titles.en}
-              onChange={(e) => setTitles({ ...titles, en: e.target.value })}
-            />
+          <div className="flex gap-2">
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleEn">
+                MENU (English)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                type="text"
+                id="titleEn"
+                className={
+                  titleEnError ? styles.error_border : styles.form_input
+                }
+                placeholder="e.g. SASHIMI ROYAL"
+                value={titles.en}
+                onChange={(e) => setTitles({ ...titles, en: e.target.value })}
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleFr">
+                MENU (French)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                type="text"
+                id="titleFr"
+                className={
+                  titleFrError ? styles.error_border : styles.form_input
+                }
+                placeholder="e.g. SASHIMI ROYAL"
+                value={titles.fr}
+                onChange={(e) => setTitles({ ...titles, fr: e.target.value })}
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleJp">
+                MENU (Japanese)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                type="text"
+                id="titleJp"
+                className={
+                  titleJpError ? styles.error_border : styles.form_input
+                }
+                placeholder="e.g. 刺身ロワイヤル"
+                value={titles.jp}
+                onChange={(e) => setTitles({ ...titles, jp: e.target.value })}
+              />
+            </div>
           </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="titleFr">
-              メニュー名 (仏語) / Title (French)
-            </label>
-            <input
-              type="text"
-              id="titleFr"
-              className={titleFrError ? styles.error_border : styles.form_input}
-              placeholder="e.g. Sushi"
-              value={titles.fr}
-              onChange={(e) => setTitles({ ...titles, fr: e.target.value })}
-            />
+          <div className="flex gap-2">
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailEn">
+                DETAILS (English)
+              </label>
+              <textarea
+                id="detailEn"
+                className={styles.form_textarea}
+                placeholder="e.g. Sliced raw fishes superior"
+                value={details.en}
+                onChange={(e) => setDetails({ ...details, en: e.target.value })}
+              ></textarea>
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailFr">
+                DETAILS (French)
+              </label>
+              <textarea
+                id="detailFr"
+                className={styles.form_textarea}
+                placeholder="e.g. Tranches de poissons crus Supérieurs"
+                value={details.fr}
+                onChange={(e) => setDetails({ ...details, fr: e.target.value })}
+              ></textarea>
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailJp">
+                DETAILS (Japanese)
+              </label>
+              <textarea
+                id="detailJp"
+                className={styles.form_textarea}
+                placeholder="e.g. 刺身の盛り合わせ"
+                value={details.jp}
+                onChange={(e) => setDetails({ ...details, jp: e.target.value })}
+              ></textarea>
+            </div>
           </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="titleJp">
-              メニュー名 (日本語) / Title (Japanese)
-            </label>
-            <input
-              type="text"
-              id="titleJp"
-              className={titleJpError ? styles.error_border : styles.form_input}
-              placeholder="e.g. Sushi"
-              value={titles.jp}
-              onChange={(e) => setTitles({ ...titles, jp: e.target.value })}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="detailEn">
-              詳細 (英語) / Details (English)
-            </label>
-            <textarea
-              id="detailEn"
-              className={styles.form_textarea}
-              placeholder="Description of the gourmet item"
-              value={details.en}
-              onChange={(e) => setDetails({ ...details, en: e.target.value })}
-            ></textarea>
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="detailFr">
-              詳細 (仏語) / Details (French)
-            </label>
-            <textarea
-              id="detailFr"
-              className={styles.form_textarea}
-              placeholder="Description of the gourmet item"
-              value={details.fr}
-              onChange={(e) => setDetails({ ...details, fr: e.target.value })}
-            ></textarea>
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="detailJp">
-              詳細 (日本語) / Details (Japanese)
-            </label>
-            <textarea
-              id="detailJp"
-              className={styles.form_textarea}
-              placeholder="Description of the gourmet item"
-              value={details.jp}
-              onChange={(e) => setDetails({ ...details, jp: e.target.value })}
-            ></textarea>
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="price">
-              価格 (ランチなし) / Price (No Lunch)
-            </label>
-            <input
-              type="text"
-              id="price"
-              className={priceError ? styles.error_border : styles.form_input}
-              placeholder="e.g. 2000"
-              value={price}
-              onChange={handlePriceChange}
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label} htmlFor="priceLunch">
-              価格 (ランチあり) / Price (With Lunch)
-            </label>
-            <input
-              type="text"
-              id="priceLunch"
-              className={priceError ? styles.error_border : styles.form_input}
-              placeholder="e.g. 2500"
-              value={priceLunch}
-              onChange={handlePriceLunchChange}
-            />
+          <div className="flex gap-3">
+            <div className={`${styles.formGroup} `}>
+              <label className={styles.label} htmlFor="price">
+                PRICE (EUR)<span className="text-pink-600 font-bold">*</span>
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  id="price"
+                  className={
+                    priceError ? styles.error_border : styles.form_input
+                  }
+                  placeholder="e.g. 33.00"
+                  value={price}
+                  onChange={handlePriceChange}
+                />
+                <span className={`${styles.currency} px-1`}>€</span>
+              </div>
+            </div>
+            <div className={`${styles.formGroup} `}>
+              <label className={styles.label} htmlFor="priceLunch">
+                LUNCH PRICE (EUR)
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  id="priceLunch"
+                  className={
+                    priceError ? styles.error_border : styles.form_input
+                  }
+                  placeholder="e.g. 25.00"
+                  value={priceLunch}
+                  onChange={handlePriceLunchChange}
+                />
+                <span className={`${styles.currency} px-1`}>€</span>
+              </div>
+            </div>
           </div>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="volume">
-              容量 / Volume
+              VOLUME
             </label>
             <input
               type="text"
               id="volume"
               className={styles.form_input}
-              placeholder="e.g. 250ml"
+              placeholder="e.g. 25cl"
               value={volume}
               onChange={(e) => setVolume(e.target.value)}
             />
@@ -444,8 +482,11 @@ const EditGourmetPage = ({ gourmet }: { gourmet: TGourmet }) => {
             ))}
           </div>
           <div className={styles.formGroup}>
-            <button type="submit" className={styles.submitButton}>
-              Submit
+            <button
+              type="submit"
+              className={`${styles.button} second-btn mt-10`}
+            >
+              EDIT
             </button>
           </div>
         </form>

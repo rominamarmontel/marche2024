@@ -86,9 +86,9 @@ const Sidebar = () => {
             </li> */}
           </ul>
         </div>
-        <div className="btn_container">
-          <button onClick={() => signOut()} className="primary-btn">
-            Logout / ログアウト
+        <div className={styles.btn_container}>
+          <button onClick={() => signOut()} className="second-btn">
+            LOGOUT
           </button>
         </div>
       </div>

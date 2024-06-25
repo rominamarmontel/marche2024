@@ -45,6 +45,20 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'myfont-HelveticaNeuveLight';
+  src: url('../public/fonts/helvetica-neue-5/HelveticaNeueLight.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'myfont-HelveticaNeuveMedium';
+  src: url('../public/fonts/helvetica-neue-5/HelveticaNeueMedium.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 .sawarabi-mincho-regular {
   font-family: 'Sawarabi Mincho', serif;
   font-weight: 400;
@@ -75,6 +89,54 @@
   --color-matcha: #57722a;
   --font-sawarabi: 'Yuji Syuku', serif;
   --font-yuGothic: yu-gothic-pr6n, sans-serif;
+  --color-primary: #000000;
+  --color-primary-light: #808080;
+  --color-primary-darkened: #000000;
+  --body-bg-color: #ffffff;
+  --body-txt-color: #000000;
+  --body-txt-color-light: #777777;
+  --body-font: 'Arial', 'sans-serif';
+  --content-bg-color: #ffffff;
+  --content-border-color: #dddddd;
+  --header-bg-color: #000000;
+  --header-txt-color: #000000;
+  --header-link-color: #ff6666;
+  --header-link-color-hover: #dd6666;
+  --topbar-bg-color: #000000;
+  --topbar-txt-color: #ffffff;
+  --topbar-link-color: #ffffff;
+  --footer-bg-color: #67656a;
+  --footer-txt-color: #ffffff;
+  --footer-link-color: #dddddd;
+  --footer-link-hover-color: #ffffff;
+  --btn-font: 'Arial', 'sans-serif';
+  --btn-bg-color: #ff6666;
+  --btn-txt-color: #ffffff;
+  --btn-border: 1px solid #ff6666;
+  --btn-bg-color-hover: #dd6666;
+  --btn-txt-color-hover: #ffffff;
+  --btn-border-hover: 1px solid #dd6666;
+  --btn-s-bg-color: #67656a;
+  --btn-s-txt-color: #ffffff;
+  --btn-s-border: 1px solid #67656a;
+  --btn-s-bg-color-hover: #000000;
+  --btn-s-txt-color-hover: #ffffff;
+  --btn-s-border-hover: 1px solid #000000;
+  --link-txt-color: #bd100e;
+  --link-txt-color-hover: #5e0807;
+  --header-link-color-hover: #dd6666;
+  --titselect-bg-color: #ffffff;
+  --titselect-txt-color: #000000;
+  --title-font: 'Arial', 'sans-serif';
+  --h1-color: #000000;
+  --h2-color: #000000;
+  --h3-color: #000000;
+  --thead-bg-color: #3f3f3f;
+  --thead-txt-color: #ffffff;
+  --tbody-rupt-bg-color: #d3d3d3;
+  --tbody-rupt-txt-color: #000000;
+  --tfoot-bg-color: #ffffff;
+  --tfoot-txt-color: #000000;
 }
 * {
   box-sizing: border-box;
@@ -119,28 +181,40 @@ a {
 }
 input,
 textarea {
-  @apply px-4 py-2 border border-slate-300 rounded-sm;
+  @apply px-4 py-2 bg-stone-200 border-none rounded-sm;
 }
+
 .primary-btn {
-  @apply px-4 py-2 bg-black text-white rounded-sm;
+  @apply pt-3 pb-2 bg-black text-white rounded-sm;
   box-shadow: 1px 1px 1px rgba(120, 120, 120, 0.205);
   transition: background-color 0.5s ease-out 100ms;
   transition: all 0.5s ease-in-out;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-family: 'myfont-HelveticaNeuveMedium';
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 .primary-btn:hover {
-  background-color: cadetblue;
+  background-color: rgb(109, 109, 109);
+  transform: scale(1.01);
+}
+.second-btn {
+  @apply px-10 pt-3 pb-2 text-white rounded-sm;
+  background-color: #ff6666;
+  box-shadow: 1px 1px 1px rgba(120, 120, 120, 0.205);
+  transition: background-color 0.5s ease-out 100ms;
+  transition: all 0.5s ease-in-out;
+  border-radius: 30px;
+  font-family: 'myfont-HelveticaNeuveMedium';
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+.second-btn:hover {
+  background-color: #dd6666;
   transform: scale(1.01);
 }
 
-.second-btn {
-  font-family: 'myfont-medium';
-  font-size: 0.7rem;
-  background-color: #c4010a;
-  padding: 6px 8px;
-  color: white;
-  /* border: 1px solid #3333; */
-  border-radius: 50%;
-}
 /* PC & iPad Pro (1024px 以上) */
 /* @media screen and (min-width: 1024px) {
   body {

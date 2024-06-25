@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './styles.module.css'
+import styles from './create.module.css'
 import { useState, useEffect } from 'react'
 import { TCategory } from '@/types'
 import { useRouter } from 'next/navigation'
@@ -235,110 +235,193 @@ const CreateMarchePage = () => {
   return (
     <div className={styles.CreateMarchePage}>
       <div className={styles.container}>
-        <div className={styles.title}>CreateMarchePage</div>
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
-          <select
-            onChange={handleCategoryChange}
-            className={
-              selectedCategory === '-1'
-                ? styles.error_border_select
-                : styles.form_select
-            }
-            value={selectedCategory}
-          >
-            <option value="-1">
-              Choose a category | カテゴリーを選択してください
-            </option>
-            {categories &&
-              categories.map((category: TCategory) => (
-                <option key={category._id} value={category.catName}>
-                  {category.catName}
-                </option>
-              ))}
-          </select>
-          <select
-            onChange={(e) => setGenre(e.target.value)}
-            className={styles.form_select}
-            disabled={!selectedCategory || selectedCategory === '-1'}
-          >
-            <option value="-1">
-              Choose a genre | ジャンルを選択してください
-            </option>
-            {selectedCategory &&
-              selectedCategory !== '-1' &&
-              categoryGenresMap[selectedCategory].map((genre) => (
-                <option key={genre} value={genre.toLowerCase()}>
-                  {genre}
-                </option>
-              ))}
-          </select>
-          <div className={styles.form_flex}>
-            <input
-              onChange={handleTitleChangeEn}
-              type="text"
-              placeholder="Title (English/英語)"
-              className={titleEnError ? styles.error_border : styles.form_input}
-            />
-            <input
-              onChange={handleTitleChangeFr}
-              type="text"
-              placeholder="Title (French/フランス語)"
-              className={titleFrError ? styles.error_border : styles.form_input}
-            />
-            <input
-              onChange={handleTitleChangeJp}
-              type="text"
-              placeholder="Title (Japanese/日本語)"
-              className={titleJpError ? styles.error_border : styles.form_input}
-            />
-          </div>
-          <div className={styles.form_flex}>
-            <input
-              onChange={handleDetailChangeEn}
-              type="text"
-              placeholder="Detail (English/英語)"
-              className={styles.form_input}
-            />
-            <input
-              onChange={handleDetailChangeFr}
-              type="text"
-              placeholder="Detail (French/フランス語)"
-              className={styles.form_input}
-            />
-            <input
-              onChange={handleDetailChangeJp}
-              type="text"
-              placeholder="Detail (Japanese/日本語)"
-              className={styles.form_input}
-            />
-          </div>
-          <div className={styles.form_flex}>
-            <input
-              onChange={handlePriceChange}
-              type="number"
-              placeholder="Price (Obligation/必須)"
-              value={price}
-              className={
-                priceError ? styles.error_border_price : styles.form_input
-              }
-            />
-            <span className={styles.currency}>€</span>
-            <input
-              onChange={handlePriceLunchChange}
-              type="number"
-              placeholder="Lunch price"
-              value={priceLunch}
-              className={styles.form_input}
-            />
-            <span className={styles.currency}>€</span>
-          </div>
-          <input
-            onChange={(e) => setVolume(e.target.value)}
-            type="text"
-            placeholder="Volume"
-            className={styles.form_input}
+        <div className="bg-stone-300 flex flex-col items-center pb-4">
+          <div className={styles.title}>SUSHI MARCHE CREATE</div>
+          <Image
+            src="/images/sushimarche.png"
+            alt="sushimarche"
+            width={100}
+            height={50}
           />
+        </div>
+        <div className="text-right text-sm pt-2 px-2">
+          <span className="text-pink-600 font-bold">*</span>必須項目
+        </div>
+        <form onSubmit={handleSubmit} className={styles.formContainer}>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="category">
+              CATEGORY
+              <span className="text-pink-600 font-bold">*</span>
+            </label>
+            <select
+              onChange={handleCategoryChange}
+              className={
+                selectedCategory === '-1'
+                  ? styles.error_border_select
+                  : styles.form_select
+              }
+              value={selectedCategory}
+            >
+              <option value="-1">
+                Choose a category | カテゴリーを選択してください
+              </option>
+              {categories &&
+                categories.map((category: TCategory) => (
+                  <option key={category._id} value={category.catName}>
+                    {category.catName}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="genre">
+              GENRE<span className="text-pink-600 font-bold">*</span>
+            </label>
+            <select
+              onChange={(e) => setGenre(e.target.value)}
+              className={styles.form_select}
+              disabled={!selectedCategory || selectedCategory === '-1'}
+            >
+              <option value="-1">
+                Choose a genre | ジャンルを選択してください
+              </option>
+              {selectedCategory &&
+                selectedCategory !== '-1' &&
+                categoryGenresMap[selectedCategory].map((genre) => (
+                  <option key={genre} value={genre.toLowerCase()}>
+                    {genre}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className="flex gap-2">
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleEn">
+                MENU (English)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                onChange={handleTitleChangeEn}
+                type="text"
+                placeholder="e.g. SASHIMI ROYAL"
+                className={
+                  titleEnError ? styles.error_border : styles.form_input
+                }
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleFr">
+                MENU (French)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                onChange={handleTitleChangeFr}
+                type="text"
+                placeholder="e.g. SASHIMI ROYAL"
+                className={
+                  titleFrError ? styles.error_border : styles.form_input
+                }
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="titleJp">
+                MENU (Japanese)
+                <span className="text-pink-600 font-bold">*</span>
+              </label>
+              <input
+                onChange={handleTitleChangeJp}
+                type="text"
+                placeholder="e.g. 刺身ロワイヤル"
+                className={
+                  titleJpError ? styles.error_border : styles.form_input
+                }
+              />
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailEn">
+                DETAILS (English)
+              </label>
+              <input
+                onChange={handleDetailChangeEn}
+                type="text"
+                placeholder="e.g. Sliced raw fishes superior"
+                className={styles.form_input}
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailFr">
+                DETAILS (French)
+              </label>
+              <input
+                onChange={handleDetailChangeFr}
+                type="text"
+                placeholder="e.g. Tranches de poissons crus Supérieurs"
+                className={styles.form_input}
+              />
+            </div>
+            <div className={`${styles.formGroup} flex-1`}>
+              <label className={styles.label} htmlFor="detailJp">
+                DETAILS (Japanese)
+              </label>
+              <input
+                onChange={handleDetailChangeJp}
+                type="text"
+                placeholder="e.g. 刺身の盛り合わせ"
+                className={styles.form_input}
+              />
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <div className={`${styles.formGroup} `}>
+              <label className={styles.label} htmlFor="price">
+                PRICE (EUR)<span className="text-pink-600 font-bold">*</span>
+              </label>
+              <div className="flex items-center">
+                <input
+                  onChange={handlePriceChange}
+                  type="number"
+                  placeholder="e.g. 33.00"
+                  value={price}
+                  className={
+                    priceError ? styles.error_border_price : styles.form_input
+                  }
+                />
+                <span className={`${styles.currency} px-1`}>€</span>
+              </div>
+            </div>
+            <div className={`${styles.formGroup} `}>
+              <label className={styles.label} htmlFor="priceLunch">
+                LUNCH PRICE (EUR)
+              </label>
+              <div className="flex items-center">
+                <input
+                  onChange={handlePriceLunchChange}
+                  type="number"
+                  placeholder="e.g. 25.00"
+                  value={priceLunch}
+                  className={styles.form_input}
+                />
+                <span className={`${styles.currency} px-1`}>€</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="volume">
+              VOLUME
+            </label>
+            <input
+              onChange={(e) => setVolume(e.target.value)}
+              type="text"
+              placeholder="Volume"
+              className={styles.form_input}
+            />
+          </div>
           <div className="relative">
+            <label className={styles.image} htmlFor="image">
+              IMAGE (JPEG/PNG/TIFF)
+            </label>
             <CldUploadButton
               uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
               onUpload={handleImageUpload}
@@ -392,7 +475,12 @@ const CreateMarchePage = () => {
               </div>
             ))}
           </div>
-          <button className="primary-btn mt-10">Create New Marche</button>
+          <button
+            type="submit"
+            className={`${styles.button} primary-btn mt-10`}
+          >
+            CREATE
+          </button>
         </form>
       </div>
     </div>
