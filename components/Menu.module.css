@@ -2,22 +2,25 @@
   font-family: 'myfont-ultraLight';
   font-weight: bold;
   font-size: 1.75rem;
+  color: #616161;
   padding-top: 10rem;
   padding-bottom: 1rem;
   text-align: center;
-  letter-spacing: 0.2rem;
 }
 .category_jp {
   font-family: var(--font-yugothic);
   font-weight: 300;
   font-size: 1.75rem;
+  color: #616161;
   padding-top: 10rem;
   padding-bottom: 1rem;
   text-align: center;
 }
 .genre {
+  font-family: 'myfont-ultraLight';
+  font-size: 1.5rem;
+  font-weight: bold;
   padding-top: 5rem;
-  padding-bottom: 1rem;
 }
 .genre_jp {
   font-family: var(--font-yugothic);
@@ -45,6 +48,8 @@
   width: 100%;
 }
 .midiSoir {
+  font-family: 'myfont-ultraLight';
+  font-weight: bold;
   display: flex;
   justify-content: end;
 }
@@ -123,64 +128,3 @@
     width: 100%;
   }
 }
-/** Set Menu **/
-/* .table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-  border: none;
-}
-.table_header {
-  font-family: 'myfont-Light';
-  font-size: 0.94rem;
-  color: var(--text-gray);
-}
-.table th,
-.table td {
-  border-bottom: 1px solid #ccc;
-  padding: 4px 10px;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-.table thead th:first-child {
-  width: 20%;
-}
-.table thead th:nth-child(3),
-.table thead th:last-child {
-  width: 10%;
-  text-align: right;
-}
-.table tbody td:nth-child(3),
-.table tbody td:last-child {
-  text-align: right;
-}
-.DrinkDessert table th:nth-child(3) {
-  width: 30%;
-}
-.menuTitle {
-  font-family: 'myfont-Light';
-  font-size: 0.94rem;
-  color: var(--text-gray);
-  line-height: 1.65;
-}
-.menuDetail {
-  font-family: 'myfont-Light';
-  font-size: 0.84rem;
-  color: var(--text-gray);
-  line-height: 1.65;
-}
-.SetMenu_text {
-  width: 100%;
-} */
-
-/** Starters **/
-/* .Starters tbody td:first-child,
-.SushiSashimi tbody td:first-child,
-.DrinkDessert tbody td:first-child {
-  width: 20%;
-}
-.Starters tbody td:last-child,
-.SushiSashimi tbody td:last-child,
-.DrinkDessert tbody td:first-child {
-  width: 10%;
-} */

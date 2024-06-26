@@ -1,4 +1,4 @@
-import styles from '../menu.module.css'
+import styles from '@/components/menu.module.css'
 import { TMarche } from '@/types'
 import Image from 'next/image'
 import { useState } from 'react'

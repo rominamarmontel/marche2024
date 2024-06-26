@@ -1,4 +1,4 @@
-import styles from '../menu.module.css'
+import styles from '@/components/menu.module.css'
 import { TGourmet } from '@/types'
 import MenuFrenchSetMenu from './MenuFrenchSetMenu'
 import MenuFrenchStarters from './MenuFrenchStarters'

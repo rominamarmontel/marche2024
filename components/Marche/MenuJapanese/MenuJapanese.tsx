@@ -1,4 +1,4 @@
-import styles from '../menu.module.css'
+import styles from '@/components/menu.module.css'
 import { TMarche } from '@/types'
 import MenuJpSetMenu from './MenuJpSetMenu'
 import MenuJpStarters from './MenuJpStarters'
